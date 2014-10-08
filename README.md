@@ -12,7 +12,7 @@ This program takes three arguments:
 <li>_batchSize_: the number of records per collection file to be generated  
     (0 for unlimited batch size),  
     defaults to 0</li>
-
+</ul>
 The batches will be named b[batchNumber].xml
 
 For example:
