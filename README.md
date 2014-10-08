@@ -23,7 +23,7 @@ perl MiJ2XML.pl myMARC.json myDir  100
 Reads myMARC.json from the current directory, use or create a subdirectory of the current directory called myDir, and write MARCXML collections in batches of 100 records or less. If there are 275 records in the source file, three batches will be created, named b1.xml, b2.xml, and b3.xml.
 
 ```  
-perl MARC-batcher.pl  
+perl MiJ2XML.pl  
 ```  
 Reads meta.json from the current directory and generate a single b1.xml file in the current directory.
 
