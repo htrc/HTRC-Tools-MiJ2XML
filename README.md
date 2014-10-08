@@ -4,13 +4,14 @@ Convert newline-delimited MARC-in-JSON files to MARCXML collection files.
 ## usage
 
 This program takes three arguments:  
-_sourcefile_: the path to the MARC-in_JSON file to be converted  
-    defaults to meta.json in current directory  
-_destinationDir_: the path of the destination directory, 
-    defaults to current directory  
-_batchSize_: the number of records per collection file to be generated  
+<ul>
+<li>_sourcefile_: the path to the MARC-in_JSON file to be converted  
+    defaults to meta.json in current directory</li>
+<li>_destinationDir_: the path of the destination directory, 
+    defaults to current directory</li>
+<li>_batchSize_: the number of records per collection file to be generated  
     (0 for unlimited batch size),  
-    defaults to 0  
+    defaults to 0</li>
 
 The batches will be named b[batchNumber].xml
 
