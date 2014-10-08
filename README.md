@@ -1,14 +1,35 @@
-MiJ2XML
-=======
-####Convert newline-delimited MARC-in-JSON files to MARCXML collection files.
-##dependencies
+# MiJ2XML
+Convert newline-delimited MARC-in-JSON files to MARCXML collection files.
+
+## usage
+
+This program takes three arguments:  
+_sourcefile_: the path to the MARC-in_JSON file to be converted, defaults to meta.json in current directory  
+destinationDir_: the path of the destination directory, defaults to current directory  
+_batchSize_: the number of records per collection file to be generated  (0 for unlimited batch size), defaults to 0  
+
+The batches will be named b[batchNumber].xml
+
+For example:
+
+```  
+perl MiJ2XML.pl myMARC.json myDir  100  
+```  
+Reads myMARC.json from the current directory, use or create a subdirectory of the current directory called myDir, and write MARCXML collections in batches of 100 records or less. If there are 275 records in the source file, three batches will be created, named b1.xml, b2.xml, and b3.xml.
+
+```  
+perl MARC-batcher.pl  
+```  
+Reads meta.json from the current directory and generate a single b1.xml file in the current directory.
+
+## dependencies:
 <ul>
 <li>attributes</li>
 <li>AutoLoader</li>
 <li>base</li>
 <li>bytes</li>
-<li>C:::Dwimperl::perl::lib::auto::POSIX::autosplit.ix</li>
-<li>C:::Dwimperl::perl::lib::auto::POSIX::load_imports.al</li>
+<li>POSIX::autosplit.ix</li>
+<li>POSIX::load_imports.al</li>
 <li>Carp</li>
 <li>charnames</li>
 <li>Class::Accessor</li>
@@ -36,6 +57,7 @@ MiJ2XML
 <li>IO::Seekable</li>
 <li>JSON</li>
 <li>JSON::XS</li>
+<li>List::Util</li>
 <li>MARC::Batch</li>
 <li>MARC::Charset</li>
 <li>MARC::Charset::Code</li>
@@ -56,6 +78,7 @@ MiJ2XML
 <li>Symbol</li>
 <li>Tie::Hash</li>
 <li>Unicode::Normalize</li>
+<li>utf8</li>
 <li>vars</li>
 <li>warnings</li>
 <li>warnings::register</li>
